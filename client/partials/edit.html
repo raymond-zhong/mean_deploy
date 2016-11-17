@@ -1,0 +1,8 @@
+<form style="padding:10px;border:1px solid black;">
+  <input type='text' name='fname' ng-model='friend.Fname' > First Name</br>
+  <input type='text' name='lname' ng-model='friend.Lname'> Last Name</br>
+  <input type='date' name='birthday' ng-model='friend.Birthday' ng-change="test()"> Birthday</br>
+      <button type='submit' ng-click='updateFriend()'>Update</button>
+</form>
+{{friend.Birthday | date}}
+<!-- ng-change="test()" -->

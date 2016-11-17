@@ -1,0 +1,6 @@
+<form style="padding:10px;border:1px solid black;">
+  <input type='text' name='Fname' value="{{friend.Fname}}"> First Name</br>
+  <input type='text' name='Lname' value="{{friend.Lname}}"> Last Name</br>
+  <input type='text' name='Birthday' value="{{friend.Birthday | date: 'MM/dd/yyyy' }}"> Birthday</br>
+  <input type='text' name='added' value="{{friend.UserAdded | date: 'MM/dd/yyyy' }}"></br> user added
+</form>

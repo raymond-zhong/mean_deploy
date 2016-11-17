@@ -1,0 +1,10 @@
+<div ng-messages="playerForm.name.$error">
+<p ng-message="minlength">The Name is too short.</p>
+<p ng-message="required">All fields are required.</p>
+</div>
+<form style="padding:10px;border:1px solid black;">
+  <input type='text' name='fname' placeholder="First Name" ng-model='newFriend.Fname' ng-minlength='4' required> First Name</br>
+  <input type='text' name='lname' placeholder="Last Name" ng-model='newFriend.Lname' ng-minlength='4' required> Last Name</br>
+  <input type='date' name='birthday' ng-model='newFriend.Birthday' required> Birthday</br>
+    <button type='submit' ng-click='createFriend()'>Create</button>
+</form>
