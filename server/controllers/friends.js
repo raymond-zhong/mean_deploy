@@ -12,11 +12,13 @@ function FriendsController(){
   };
   this.create = function(req,res){
     console.log(req.body);
-
-    var new_friend = new Friend(req.body);
-    // validation?
-    res.json({error: 'You cant do that'})
-    new_friend.save(req.body, function(err, friends){
+    // var new_friend = new Friend(req.body);
+    // if (new_friend.Fname.length <4){
+    //   console.log(new_friend.Fname);
+    // res.json({error: 'You cant do that'})
+    // }
+    // new_friend
+    Friend.create(req.body, function(err, friends){
     if (err) { console.log(err);}
     res.json(friends);
   })
