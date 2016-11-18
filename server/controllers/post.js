@@ -25,7 +25,7 @@ function postController() {
 		this.update= function(req, res) {
 			Post.findByIdAndUpdate(
 				req.params.id,
-				{$set: {comments: req.body.comments}},
+				{$set: {like: console.log("+1 like")}},
 				{new : true},
 				function(err, data){
 					if(err)

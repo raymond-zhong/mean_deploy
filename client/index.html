@@ -6,20 +6,18 @@
 	<!-- Angular from bower_components, otherwise find the CDN -->
   <script src="angular/angular.js" charset="utf-8"></script>
   <script src="angular-route/angular-route.js" charset="utf-8"></script>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
 	<!-- End Bower Components -->
 	<!--We load all our modularized javascript files-->
 			<script type="text/javascript" src="/assets/app.js"  charset="utf-8"></script>
-      <script type="text/javascript" src="/assets/factories/friendsFactory.js"></script>
 			<script type="text/javascript" src="/assets/factories/userFactory.js"></script>
 			<script type="text/javascript" src="/assets/factories/postFactories.js"></script>
 			<script type="text/javascript" src="/assets/factories/topicFactories.js"></script>
-      <script type="text/javascript" src="/assets/controllers/newController.js"></script>
-      <script type="text/javascript" src="/assets/controllers/editController.js"></script>
-      <script type="text/javascript" src="/assets/controllers/indexController.js"></script>
 			<script type="text/javascript" src="/assets/controllers/loginController.js"></script>
 			<script type="text/javascript" src="/assets/controllers/dashboardController.js"></script>
 			<script type="text/javascript" src="/assets/controllers/topicController.js"></script>
+			<script type="text/javascript" src="/assets/controllers/answerController.js"></script>
 			<script type="text/javascript" src="/assets/controllers/userController.js"></script>
 </head>
 <body ng-app='myApp'>
@@ -28,4 +26,12 @@
   </div>
 </body>
 </html>
-  <!-- <a href="#/">Logout</a> -->
+	<!--
+
+	    EMIT:
+	    	socket.emit('my_emit_event');
+	    BROADCAST:
+	    	socket.broadcast.emit("my_broadcast_event");
+	    FULL BROADCAST:
+	    	io.emit("my_full_broadcast_even");
+	}) -->

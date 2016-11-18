@@ -21,12 +21,13 @@ function userController(){
 			})
 		},
 		this.readOne= function(req, res) {
-			User.find({ _id: req.params.id }, function(err, data) {
-				if(err)
-					console.log("user 28", err);
-				else
-					res.json(data);
-			})
+			// console.log(req.params.id)
+			// User.find({ _id: req.params.id }, function(err, data) {
+			// 	if(err)
+			// 		console.log("user 28", err);
+			// 	else
+			// 		res.json(data);
+			// })
 		},
 
 		this.updateTopics=function(req, res) {

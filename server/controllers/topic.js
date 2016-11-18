@@ -30,13 +30,14 @@ function topicController() {
 		},
 
 		this.getOne= function(req, res) {
-			console.log(req.params.id)
-			Topic.findOne({ _id: req.params.id}, function(err, data) {
-				if(err)
-					console.log("topic 34", err)
-				else
-					res.json(data);
-			})
+			// console.log(req.params.id)
+			// 	console.log('hi')
+			// Topic.find({ _id: req.params.id}, function(err, data) {
+			// 	if(err)
+			// 		console.log("topic 34", err)
+			// 	else
+			// 		res.json(data);
+			// })
 		},
 
 		this.update= function(req, res) {

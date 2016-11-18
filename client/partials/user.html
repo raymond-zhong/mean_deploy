@@ -1,9 +1,27 @@
+<div class="row main">
+		<p><a href="#/dashboard/">Home</a> | <a href="#/answer/{{topic._id}}">Answer this Question</a></p>
+	<div class="text-right">
+			<p><a href="#/">Logout</a></p>
+	</div>
 <div>
-	<p><a href="#/dashboard">Dashboard</a>  | <a href="#/">Logout</a></p>
-	<h2><span ng-bind="user.name"></span></h2>
-	<br>
-	<h3>Posted...</h2>
-	<h4><span ng-bind="user.topics.length"></span> Topics</h3>
-	<h4><span ng-bind="user.posts.length"></span> Posts</h3>
-	<h4><span ng-bind="user.comments.length"></span> Comments</h3>
+<h1><span ng-bind="topic.title"></span></h1>
+<h5><span ng-bind="topic.description"></span></h5>
+
+
+<div class="row form-group">
+	<tbody ng-repeat="post in posts | orderBy: created_at: reverse">
+	<tr>
+		<p ng-bind="post.name"></p>
+		<p ng-bind="post.post"></p>
+		<p ng-bind="post.description"></p>
+	</tr>
+	<tr>
+		<p ng-bind="post.likes">likes</p>
+		<button class="btn btn-success col-md-1 col-md-offset-5" ng-click="createComment(post, name)">Like!</button>
+	</tr>
+	</tbody>
+</div>
+
+</div>
+
 </div>

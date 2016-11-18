@@ -1,10 +1,9 @@
-console.log('topics model');
+console.log('topic model');
 var mongoose = require('mongoose');
 
 var topicSchema = new mongoose.Schema({
 	name        :String,
 	user_id     :{ type: mongoose.Schema.Types.ObjectId, ref: "Users" },
-	category    :String,
 	title       :String,
 	description :String,
 	created_at  :{ type: Date, default: Date.now },
