@@ -7,7 +7,7 @@ myApp.controller('indexController', ['$scope','friendsFactory', '$routeParams','
   $scope.deleteFriend=function(id){
 // console.log(id);
      friendsFactory.delete(id);
-     $location.url('/');
+     $location.url('dashboard');
    };
    var index = function(){
                         friendsFactory.index(function(returnedData){

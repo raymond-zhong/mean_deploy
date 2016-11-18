@@ -7,7 +7,7 @@ myApp.controller('newController', ['$scope','friendsFactory','$location', functi
   $scope.createFriend=function(){
     friendsFactory.create($scope.newFriend);
     // console.log($scope.newFriend);
-    $location.url('/');
+    $location.url('/dashboard');
   };
   /*
     OUR $scope.update function goes here <-- $scope because we need to access this method

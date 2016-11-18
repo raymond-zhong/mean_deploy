@@ -1,7 +1,3 @@
-//This is the first javascript file to load, so it initializes the module
-var myApp = angular.module("myApp", ["ngRoute","ngMessages"]);
-
-
 myApp.factory('friendsFactory', ['$http', function($http) {
   // constructor for our factory
   var friends = [];

@@ -15,7 +15,7 @@ myApp.controller('editController', ['$scope','friendsFactory', '$routeParams','$
   $scope.updateFriend=function(){
      friendsFactory.update($routeParams.id,$scope.friend);
      console.log($scope.friend);
-     $location.url('/');
+     $location.url('dashboard');
    };
 
    $scope.test = function() {
