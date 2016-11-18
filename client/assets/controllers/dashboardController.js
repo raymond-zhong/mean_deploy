@@ -18,9 +18,9 @@ myApp.controller('dashboardController', function($scope, topicFactory, userFacto
 	// 	$scope.$broadcast("new_topic", data);
 	// })
 
-	// topicFactory.readTopics(function(data) {
-	// 	$scope.topics = data;
-	// })
+	topicFactory.readTopics(function(data) {
+		$scope.topics = data;
+	})
 })
 
 // myApp.directive("topics", function() { // Added to an HTML just as class or id
