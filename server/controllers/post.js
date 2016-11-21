@@ -13,25 +13,25 @@ function postController() {
 			})
 		},
 
-		this.read= function(req, res) {
-			Post.find({topic_id: req.params.id}, function(err, data) {
-				if(err)
-					console.log("post 19", err)
-				else
-					res.json(data)
-			})
-		},
+		this.read=function(req, res) {
+				// console.log(req.params.id),
+					Post.find({topic_id: req.params.id}, function(err, data) {
+						if(err)
+							console.log("post 19", err)
+						else
+							res.json(data)
+					})
+				},
 
 		this.update= function(req, res) {
-			Post.findByIdAndUpdate(
-				req.params.id,
-				{$set: {like: console.log("+1 like")}},
-				{new : true},
+			// console.log(req.params.id),
+			Post.update({_id: req.params.id},{ $inc: {like: 1}, $set: {_id: req.params.id}}, {upsert : true},
 				function(err, data){
 					if(err)
 						console.log("post 32", err)
 					else
-						Post.find({topic_id: data.topic_id }, function(err, data) {
+								// console.log("hi"),
+						Post.find({_id: req.params.id }, function(err, data) {
 							if(err)
 								console.log("post 36", err)
 							else

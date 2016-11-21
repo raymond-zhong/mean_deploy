@@ -1,4 +1,4 @@
-myApp.factory('postFactory', function($http) {
+myApp.factory('postFactory', function($http, $location) {
 	var factory = {};
 	var topic_id = null;
 
@@ -17,32 +17,13 @@ myApp.factory('postFactory', function($http) {
 		$http.post('/posts', newPost).success(function(data) {
 			callback(data);
 		})
+		// $location.path('/dashboard');
 	}
-
-	factory.createComment = function(newComment, post, name, callback) {
-		newComment.name = name.name
-		newComment.user_id = name._id;
-		newComment.topic_id = post.topic_id;
-		newComment.post_id = post._id;
-		$http.post('/comments', newComment).success(function(data) {
-			var allComments = [];
-			var comments = [];
-			angular.forEach(data, function(comment) {
-				allComments.push(comment);
-				if(comment.user_id == name._id)
-					comments.push(comment);
-			})
-			$http.post('/posts/'+post._id, {comments: allComments}).success(function(info) {
-				callback(info);
-			})
-			console.log("comments from this post that match user", comments);
-			// $http.get('/user/'+name._id).success(function(data){
-
-			// $http.post('/user/comments/'+name._id, {comments: comments}).success(function(data) {
-			// 	callback(data);
-			// })
+	factory.updatePost = function(id, pid, callback) {
+		$http.post('/posts/'+pid).success(function(data) {
+			callback(data);
+			// $location.path('/user/'+id);
 		})
 	}
-
 	return factory;
 })

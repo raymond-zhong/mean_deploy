@@ -7,18 +7,18 @@
 
 <div>
 <h1>New Question</h1>
-	<form name="userForm" class="form-horizontal" role="form" action="#/dashboard/">
+	<form name="userForm" class="form-horizontal" role="form" ng-submit="createTopic(newTopic, user)">
 		<div class="form-group">
 			<label class="col-sm-2 control-label">Question:</label>
-			<textarea class="col-sm-4" rows="4"  ng-model="newTopic.title" placeholder="Requires at least 10 characters." ng-minlength='10' required>
+			<textarea class="col-sm-5" rows="4"  ng-model="newTopic.title" placeholder="Requires at least 10 characters." ng-minlength='10' required>
 		</textarea>
 	</div>
 		<div class="form-group">
 			<label class="col-sm-2 control-label">Description: (optional) </label>
-			<textarea class="col-sm-4" rows="4" ng-model="newTopic.description"></textarea>
+			<textarea class="col-sm-5" rows="4" ng-model="newTopic.description"></textarea>
 		</div>
 		<div class="form-group">
-			<center><button value="submit">Cancel</button><button ng-disabled="userForm.$invalid" ng-click="createTopic(newTopic, user)">Submit</button></center>
+			<center><button type="button" ng-click="go('/dashboard/')">Cancel</button><button ng-disabled="userForm.$invalid" value="submit">Submit</button></center>
 		</div>
 	</form>
 </div>

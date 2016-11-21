@@ -1,20 +1,20 @@
-<h1>Welcome, <span ng-bind="user.name"></span></h1>
+<h1>Hi {{user.name}}!</h1>
 	<a href="#/topic/">Add a Question</a>
 	<div class="text-right">
 			<p><a href="#/">Logout</a></p>
 		<p>Search: <input type="text" ng-model="query"></p>
 	</div>
-	<div class="col-xl-12">
-		<table style="border-collapse: collapse;width:500px;"topics>
+	<div>
+		<table border="1" style="width:100%" cellspacing="0" cellpadding="4">
 				<tr style="background-color: #dddddd">
-					<th>Question</th>
-					<th>Answers</th>
-					<th>Action</th>
+					<th style="padding:8px;text-align: left">Question</th>
+					<th style="padding:8px;text-align: left">Answers</th>
+					<th style="padding:8px;text-align: left">Action</th>
 				</tr>
-				<tr ng-repeat="topic in topics | filter: query" >
-					<td ng-bind="topic.title"></td>
-					<td ng-bind="topic.posts"></td>
-					<td><a href="#/user/{{topic.user_id}}">Show</a> <a href="#/answer/{{topic._id}}">Answer</a></td>
+				<tr ng-repeat="topic in topics | filter: query" style="border-top:white;border-bottom:white;">
+					<td style="padding:8px;text-align: left">{{topic.title}}</td>
+					<td style="padding:8px;text-align: left" ng-bind="topic.posts"></td>
+					<td style="padding:8px;text-align: left"><a href="#/user/{{topic._id}}">Show</a> &nbsp <a href="#/answer/{{topic._id}}">Answer</a></td>
 				</tr>
 		</table>
 	</div>

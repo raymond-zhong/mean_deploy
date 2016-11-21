@@ -21,7 +21,7 @@ myApp.config(function ($routeProvider) {
   })
 	.when('/user/:id', {
 		templateUrl: 'partials/user.html',
-		controller: 'userController'
+		controller: 'qController'
 	})
   .otherwise({
     redirectTo: '/'
