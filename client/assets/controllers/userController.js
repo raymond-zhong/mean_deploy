@@ -7,15 +7,15 @@ myApp.controller('userController', function($scope, $routeParams, topicFactory, 
 			$scope.name = data;
 		})
 
-		topicFactory.getTopic(id, function(data) {
-			topic_id = data._id;
-			$scope.topic = data;
-			postFactory.readPosts(id, function(info) {
-				$scope.posts = info;
-			})
-
-
-		})
+		// topicFactory.getTopic(id, function(data) {
+		// 	topic_id = data._id;
+		// 	$scope.topic = data;
+		// 	postFactory.readPosts(id, function(info) {
+		// 		$scope.posts = info;
+		// 	})
+		//
+		//
+		// })
 
 
 	})

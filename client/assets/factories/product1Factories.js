@@ -1,20 +1,20 @@
-myApp.factory('topicFactory', function($http, $location) {
+myApp.factory('product1Factory', function($http, $location) {
 	var factory = {};
 	var currentUser = null;
-	factory.createTopic = function(newTopic, callback) {
-		$http.post('/topics', newTopic).success(function(data) {
+	factory.createTopic = function(p1, callback) {
+		$http.post('/product1', p1).success(function(data) {
 			callback(data);
 			$location.path('/dashboard');
 		})
 	},
 
 	factory.readTopics = function(callback) {
-		$http.get('/topics').success(function(data) {
+		$http.get('/product1').success(function(data) {
 			callback(data);
 		})
 	},
 	factory.getTopic = function(id, callback) {
-		$http.get('/topics/'+id).success(function(data) {
+		$http.get('/product1/'+id).success(function(data) {
 			callback(data);
 		})
 	},
@@ -30,12 +30,12 @@ myApp.factory('topicFactory', function($http, $location) {
 	},
 
 	factory.updateTopic = function(numOfPosts, id, callback) {
-		$http.post('/topics/'+id, {posts: numOfPosts}).success(function(data) {
+		$http.post('/product1/'+id, {posts: numOfPosts}).success(function(data) {
 			callback(data);
 		})
 	}
 	factory.updatePost = function(numOfLikes, id, callback) {
-		$http.post('/posts/'+id, {like: numOfLikes}).success(function(data) {
+		$http.post('/product1/'+id, {like: numOfLikes}).success(function(data) {
 			callback(data);
 		})
 	}

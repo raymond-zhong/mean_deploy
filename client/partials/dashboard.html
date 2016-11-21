@@ -1,10 +1,108 @@
-<h1>Hi {{user.name}}!</h1>
-	<a href="#/topic/">Add a Question</a>
+<form>
+<h1>Bid Now!</h1>
 	<div class="text-right">
 			<p><a href="#/">Logout</a></p>
-		<p>Search: <input type="text" ng-model="query"></p>
 	</div>
-	<div>
+
+	<table style="width:100%" cellspacing="0" cellpadding="4">
+
+			<tr>
+				<th style="padding:8px;text-align: left">Product 1</th>
+				<th style="padding:8px;text-align: left">Product 2</th>
+				<th style="padding:8px;text-align: left">Product 3</th>
+			</tr>
+
+			<tr>
+				<td style="padding:8px;text-align: left">
+					<form name="bid1Form" class="form-horizontal">
+						<input type="number" ng-model="p1.bid" required/>
+						 <button ng-click="checkBid1(p1, user)">Bid</button>
+				</form>
+			</td>
+
+			<td style="padding:8px;text-align: left">
+				<form name="bid2Form" class="form-horizontal">
+					<input type="number" ng-model="p2.bid" required/>
+					 <button ng-click="checkBid2(p2, user)">Bid</button>
+			</form>
+		</td>
+
+		<td style="padding:8px;text-align: left">
+			<form name="bid3Form" class="form-horizontal">
+				<input type="number" ng-model="p3.bid" required/>
+				 <button ng-click="checkBid3(p3, user)">Bid</button>
+		</form>
+		</td>
+	</tr>
+
+			<tr>
+				<td style="padding:8px;text-align: left">
+				<div ng-messages="bid1Form.p1.bid.$error" style="color:maroon" role="alert">
+					<p ng-message="required">There should be not empty/$0 bid.</p>
+				<div>Bid amount should be higher than the previous bid.</div>
+				</div>
+				</td>
+				<td style="padding:8px;text-align: left">
+					<div ng-messages="bid2Form.p2.bid.$error">
+					<p ng-message="required">There should be not empty/$0 bid.</p>
+					</div>
+				</td>
+				<td style="padding:8px;text-align: left">
+					<div ng-messages="bid3Form.p3.bid.$error">
+					<p ng-message="required">There should be not empty/$0 bid.</p>
+					</div>
+				</td>
+			</tr>
+
+			<tr>
+				<td style="padding:8px;text-align: left">Current Bids:</td>
+				<td style="padding:8px;text-align: left">Current Bids:</td>
+				<td style="padding:8px;text-align: left">Current Bids:</td>
+			</tr>
+
+			<tr>
+				<td style="padding:8px;text-align: left">
+					<table border="0" style="width:80%" cellspacing="0" cellpadding="4" ng-repeat="bid in product1 | filter: query1 | orderBy: 'bid'">
+					<tr style="border-top:white;border-bottom:white;">
+					<td><p>{{bid.name}}: $ {{bid.bid}}</p></td>
+					</tr>
+			</table>
+				</td>
+
+				<td style="padding:8px;text-align: left">
+					<table border="0" style="width:80%" cellspacing="0" cellpadding="4" ng-repeat="bid in product2 | filter: query2 | orderBy: 'bid'">
+					<tr style="border-top:white;border-bottom:white;">
+					<td><p>{{bid.name}}: $ {{bid.bid}}</p></td>
+					</tr>
+			</table>
+				</td>
+
+				<td style="padding:8px;text-align: left">
+					<table border="0" style="width:80%" cellspacing="0" cellpadding="4" ng-repeat="bid in product3 | filter: query3 | orderBy: 'bid'">
+					<tr style="border-top:white;border-bottom:white;">
+					<td><p>{{bid.name}}: $ {{bid.bid}}</p></td>
+					</tr>
+			</table>
+				</td>
+
+			</tr>
+
+			<tr style="border-top:white;border-bottom:white;">
+				<td style="padding:8px;text-align: left"><input type="text" ng-model="query1" placeholder="Search"></td>
+				<td style="padding:8px;text-align: left"><input type="text" ng-model="query2" placeholder="Search"></td>
+				<td style="padding:8px;text-align: left"><input type="text" ng-model="query3" placeholder="Search"></td>
+			</tr>
+
+	</table>
+</div>
+<div class="text-right">
+</br>
+		<button ng-click="checkBid2(p2, user)">End Bid</button>
+		<a href="#/result/">End Bid</a>
+</div>
+</form>
+
+	<!-- <div>
 		<table border="1" style="width:100%" cellspacing="0" cellpadding="4">
 				<tr style="background-color: #dddddd">
 					<th style="padding:8px;text-align: left">Question</th>
@@ -18,3 +116,4 @@
 				</tr>
 		</table>
 	</div>
+<p>Search: <input type="text" ng-model="query"></p> -->

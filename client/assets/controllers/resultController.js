@@ -1,4 +1,4 @@
-myApp.controller('dashboardController', function($scope, $routeParams, product1Factory, product2Factory, product3Factory, userFactory, $location) {
+myApp.controller('resultController', function($scope, $routeParams, product1Factory, product2Factory, product3Factory, userFactory, $location) {
 	$scope.newProduct1 = {};
 	$scope.newProduct2 = {};
 	$scope.newProduct3 = {};
@@ -55,7 +55,6 @@ myApp.controller('dashboardController', function($scope, $routeParams, product1F
 						$scope.p3bids = data.data;
 						console.log(data.data);
 						$scope.p3 = {};
-
 					})
 				}
 })

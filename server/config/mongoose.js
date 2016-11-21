@@ -21,7 +21,7 @@ var mongoose      = require('mongoose'),
 /*
 *  database information
 */
-    dbURI         = 'mongodb://localhost/mean_belt_db5';
+    dbURI         = 'mongodb://localhost/mean_belt_bid';
 /*
 * Connect to the database
 */

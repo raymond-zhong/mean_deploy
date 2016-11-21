@@ -1,0 +1,51 @@
+<form>
+<h2>{{user.name}} ended the Bid.</h2>
+	<div class="text-right">
+			<p><a href="#/">Logout</a></p>
+	</div>
+<p>Highest Bidder per Product:</p>
+	<table style="width:100%" cellspacing="0" cellpadding="4">
+
+			<tr>
+				<th style="padding:8px;text-align: left">Product 1</th>
+				<th style="padding:8px;text-align: left">Product 2</th>
+				<th style="padding:8px;text-align: left">Product 3</th>
+			</tr>
+
+
+			<tr>
+				<td style="padding:8px;text-align: left">
+					<table border="0" style="width:80%" cellspacing="0" cellpadding="4" ng-repeat="bid in product1 | orderBy: '-bid'">
+					<tr style="border-top:white;border-bottom:white;">
+					<td><p>{{bid.name}}: $ {{bid.bid}}</p></td>
+					</tr>
+			</table>
+				</td>
+
+				<td style="padding:8px;text-align: left">
+					<table border="0" style="width:80%" cellspacing="0" cellpadding="4" ng-repeat="bid in product2 | filter: query2 | orderBy: '-bid'">
+					<tr style="border-top:white;border-bottom:white;">
+					<td><p>{{bid.name}}: $ {{bid.bid}}</p></td>
+					</tr>
+			</table>
+				</td>
+
+				<td style="padding:8px;text-align: left">
+					<table border="0" style="width:80%" cellspacing="0" cellpadding="4" ng-repeat="bid in product3 | filter: query3 | orderBy: '-bid'">
+					<tr style="border-top:white;border-bottom:white;">
+					<td><p>{{bid.name}}: $ {{bid.bid}}</p></td>
+					</tr>
+			</table>
+				</td>
+
+			</tr>
+
+	</table>
+</div>
+
+<div class="text-right">
+</br>
+		<button ng-click="checkBid2(p2, user)">Start Bid</button>
+		<a href="#/dashboard/">Start Bid</a>
+</div>
+</form>

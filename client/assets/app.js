@@ -11,18 +11,18 @@ myApp.config(function ($routeProvider) {
 		templateUrl: 'partials/dashboard.html',
 		controller: 'dashboardController'
 	})
-	.when('/answer/:id', {
-		templateUrl: 'partials/answer.html',
-		controller: 'answerController'
+	.when('/result/', {
+		templateUrl: 'partials/result.html',
+		controller: 'resultController'
 	})
-  .when('/topic/', {
-    templateUrl: 'partials/topic.html',
-    controller: 'topicController'
-  })
-	.when('/user/:id', {
-		templateUrl: 'partials/user.html',
-		controller: 'qController'
-	})
+  // .when('/topic/', {
+  //   templateUrl: 'partials/topic.html',
+  //   controller: 'topicController'
+  // })
+	// .when('/user/:id', {
+	// 	templateUrl: 'partials/user.html',
+	// 	controller: 'qController'
+	// })
   .otherwise({
     redirectTo: '/'
   });

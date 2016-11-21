@@ -1,0 +1,63 @@
+<h1>Bid Now!</h1>
+	<div class="text-right">
+			<p><a href="#/">Logout</a></p>
+	</div>
+
+	<table style="width:300%" cellspacing="0" cellpadding="4">
+
+			<tr>
+				<th style="padding:8px;text-align: left">Product 1</th>
+			</tr>
+
+			<tr>
+				<td style="padding:8px;text-align: left">
+					<form class="form-horizontal">
+						<input ng-model="p1.bid"/>
+					<div class="form-group">
+						 <center><button ng-click="checkBid(p1)">Bid</button>
+					</div>
+				</form>
+			</td>
+
+			<tr ng-repeat="topic in topics">
+				<td style="padding:8px;text-align: left">Error Message</td>
+			</tr>
+
+			<tr>
+				<td style="padding:8px;text-align: left">Current Bids:</td>
+			</tr>
+
+			<tr style="border-top:white;border-bottom:white;">
+				<td ng-repeat="topic in topics | filter: query1" style="padding:8px;text-align: left">{{topic.title}}</td>
+			</tr>
+
+			<tr style="border-top:white;border-bottom:white;">
+				<td style="padding:8px;text-align: left">
+					<table ng-repeat="post in posts | orderBy: 'like'">
+					<tr>
+					<td width="300px">
+					<p >{{post.name}}:</p>
+					<h5 ng-bind="post.post"></h5>
+					<p ng-bind="post.description"></p>
+				</br>
+				</td>
+				<td>
+						<p><span ng-bind="post.like" ></span> likes</p>
+					</td>
+					<td>
+					</td>
+					<td>
+					<button ng-click="addLike(post)">Like!</button>
+				</td>
+				</tr>
+			</table>
+				</td>
+
+			</tr>
+
+			<tr style="border-top:white;border-bottom:white;">
+				<td ng-repeat="topic in topics | filter: query1" style="padding:8px;text-align: left"><input type="text" ng-model="query1" placeholder="Search"></td>
+			</tr>
+
+	</table>
+</div>
